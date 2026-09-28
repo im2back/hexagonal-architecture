@@ -22,7 +22,16 @@ public class Order {
         this.status = OrderStatus.CREATED;
         this.items = new ArrayList<>();
     }
-
+    public Order(
+            Long id,
+            Long customerId,
+            OrderStatus status
+    ) {
+        this.id = id;
+        this.customerId = customerId;
+        this.status = status;
+        this.items = new ArrayList<>();
+    }
     public void addItem(OrderItem item) {
 
         if (status != OrderStatus.CREATED) {
