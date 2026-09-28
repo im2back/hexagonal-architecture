@@ -23,4 +23,25 @@ public record Money(
             throw new IllegalArgumentException("Currency cannot be null");
         }
     }
+
+    public Money multiply(Quantity quantity) {
+        return new Money(
+                amount.multiply(BigDecimal.valueOf(quantity.value())),
+                currency
+        );
+    }
+
+    public Money add(Money other) {
+
+        if (!currency.equals(other.currency())) {
+            throw new IllegalArgumentException(
+                    "Cannot add money with different currencies"
+            );
+        }
+
+        return new Money(
+                amount.add(other.amount()),
+                currency
+        );
+    }
 }
