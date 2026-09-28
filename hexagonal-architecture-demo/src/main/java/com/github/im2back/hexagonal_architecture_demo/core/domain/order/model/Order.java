@@ -5,7 +5,10 @@ import com.github.im2back.hexagonal_architecture_demo.core.domain.order.valueobj
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+import com.github.im2back.hexagonal_architecture_demo.core.domain.order.exception.InvalidOrderItemException;
+import com.github.im2back.hexagonal_architecture_demo.core.domain.order.exception.InvalidOrderStatusException;
+import com.github.im2back.hexagonal_architecture_demo.core.domain.order.exception.OrderItemNotFoundException;
+import com.github.im2back.hexagonal_architecture_demo.core.domain.order.exception.OrderWithoutItemsException;
 public class Order {
 
     private Long id;
@@ -23,13 +26,13 @@ public class Order {
     public void addItem(OrderItem item) {
 
         if (status != OrderStatus.CREATED) {
-            throw new IllegalStateException(
+            throw new InvalidOrderStatusException(
                     "Only CREATED orders can receive items"
             );
         }
 
         if (item == null) {
-            throw new IllegalArgumentException(
+            throw new InvalidOrderItemException(
                     "Order item cannot be null"
             );
         }
@@ -40,7 +43,7 @@ public class Order {
     public void removeItem(Long itemId) {
 
         if (status != OrderStatus.CREATED) {
-            throw new IllegalStateException(
+            throw new InvalidOrderStatusException(
                     "Only CREATED orders can have items removed"
             );
         }
@@ -50,24 +53,20 @@ public class Order {
         );
 
         if (!removed) {
-            throw new IllegalArgumentException(
-                    "Order item not found"
-            );
+            throw new OrderItemNotFoundException(itemId);
         }
     }
 
     public void confirm() {
 
         if (status != OrderStatus.CREATED) {
-            throw new IllegalStateException(
+            throw new InvalidOrderStatusException(
                     "Only CREATED orders can be confirmed"
             );
         }
 
         if (items.isEmpty()) {
-            throw new IllegalStateException(
-                    "Order cannot be confirmed without items"
-            );
+            throw new OrderWithoutItemsException();
         }
 
         this.status = OrderStatus.CONFIRMED;
@@ -76,7 +75,7 @@ public class Order {
     public void cancel() {
 
         if (status != OrderStatus.CREATED) {
-            throw new IllegalStateException(
+            throw new InvalidOrderStatusException(
                     "Only CREATED orders can be cancelled"
             );
         }

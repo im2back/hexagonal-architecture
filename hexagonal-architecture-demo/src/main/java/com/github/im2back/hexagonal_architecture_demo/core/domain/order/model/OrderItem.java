@@ -1,5 +1,6 @@
 package com.github.im2back.hexagonal_architecture_demo.core.domain.order.model;
 
+import com.github.im2back.hexagonal_architecture_demo.core.domain.order.exception.InvalidOrderItemException;
 import com.github.im2back.hexagonal_architecture_demo.core.domain.order.valueobject.Money;
 import com.github.im2back.hexagonal_architecture_demo.core.domain.order.valueobject.Quantity;
 
@@ -18,19 +19,19 @@ public class OrderItem {
     ) {
 
         if (productId == null) {
-            throw new IllegalArgumentException(
+            throw new InvalidOrderItemException(
                     "Product id cannot be null"
             );
         }
 
         if (quantity == null) {
-            throw new IllegalArgumentException(
+            throw new InvalidOrderItemException(
                     "Quantity cannot be null"
             );
         }
 
         if (unitPrice == null) {
-            throw new IllegalArgumentException(
+            throw new InvalidOrderItemException(
                     "Unit price cannot be null"
             );
         }
