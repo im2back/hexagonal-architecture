@@ -1,4 +1,5 @@
 # Hexagonal Architecture Demo
+<img width="552" height="362" alt="images" src="https://github.com/user-attachments/assets/eace2a9e-7075-4fc6-a49c-2652b8819d96" />
 
 Projeto de estudo desenvolvido em **Java 17 + Spring Boot** para demonstrar, na prática, a implementação da **Arquitetura Hexagonal (Ports and Adapters)**.
 
