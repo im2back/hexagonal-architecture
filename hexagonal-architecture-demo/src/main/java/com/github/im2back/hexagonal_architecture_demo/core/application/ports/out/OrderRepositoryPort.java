@@ -1,4 +1,4 @@
-package com.github.im2back.hexagonal_architecture_demo.core.application.port.out;
+package com.github.im2back.hexagonal_architecture_demo.core.application.ports.out;
 
 
 import com.github.im2back.hexagonal_architecture_demo.core.domain.order.model.Order;

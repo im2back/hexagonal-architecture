@@ -1,7 +1,7 @@
 package com.github.im2back.hexagonal_architecture_demo.configuration;
 
-import com.github.im2back.hexagonal_architecture_demo.core.application.port.in.CreateOrderUseCase;
-import com.github.im2back.hexagonal_architecture_demo.core.application.port.out.OrderRepositoryPort;
+import com.github.im2back.hexagonal_architecture_demo.core.application.ports.in.CreateOrderUseCase;
+import com.github.im2back.hexagonal_architecture_demo.core.application.ports.out.OrderRepositoryPort;
 import com.github.im2back.hexagonal_architecture_demo.core.application.service.CreateOrderService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;

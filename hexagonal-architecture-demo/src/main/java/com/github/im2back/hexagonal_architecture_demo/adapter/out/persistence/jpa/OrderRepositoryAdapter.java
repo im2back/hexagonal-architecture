@@ -3,7 +3,7 @@ package com.github.im2back.hexagonal_architecture_demo.adapter.out.persistence.j
 import com.github.im2back.hexagonal_architecture_demo.adapter.out.persistence.jpa.entity.OrderJpaEntity;
 import com.github.im2back.hexagonal_architecture_demo.adapter.out.persistence.jpa.mapper.OrderPersistenceMapper;
 import com.github.im2back.hexagonal_architecture_demo.adapter.out.persistence.jpa.repository.SpringDataOrderRepository;
-import com.github.im2back.hexagonal_architecture_demo.core.application.port.out.OrderRepositoryPort;
+import com.github.im2back.hexagonal_architecture_demo.core.application.ports.out.OrderRepositoryPort;
 import com.github.im2back.hexagonal_architecture_demo.core.domain.order.model.Order;
 import org.springframework.stereotype.Component;
 

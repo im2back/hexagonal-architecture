@@ -3,7 +3,7 @@ package com.github.im2back.hexagonal_architecture_demo.adapter.in.rest;
 import com.github.im2back.hexagonal_architecture_demo.adapter.in.dto.CreateOrderRequest;
 import com.github.im2back.hexagonal_architecture_demo.adapter.in.dto.OrderResponse;
 import com.github.im2back.hexagonal_architecture_demo.adapter.in.mapper.OrderRestMapper;
-import com.github.im2back.hexagonal_architecture_demo.core.application.port.in.CreateOrderUseCase;
+import com.github.im2back.hexagonal_architecture_demo.core.application.ports.in.CreateOrderUseCase;
 import com.github.im2back.hexagonal_architecture_demo.core.domain.order.model.Order;
 import com.github.im2back.hexagonal_architecture_demo.core.domain.order.model.OrderItem;
 import jakarta.validation.Valid;

@@ -1,7 +1,7 @@
 package com.github.im2back.hexagonal_architecture_demo.core.application.service;
 
-import com.github.im2back.hexagonal_architecture_demo.core.application.port.in.CreateOrderUseCase;
-import com.github.im2back.hexagonal_architecture_demo.core.application.port.out.OrderRepositoryPort;
+import com.github.im2back.hexagonal_architecture_demo.core.application.ports.in.CreateOrderUseCase;
+import com.github.im2back.hexagonal_architecture_demo.core.application.ports.out.OrderRepositoryPort;
 import com.github.im2back.hexagonal_architecture_demo.core.domain.order.model.Order;
 import com.github.im2back.hexagonal_architecture_demo.core.domain.order.model.OrderItem;
 
@@ -16,10 +16,7 @@ public class CreateOrderService implements CreateOrderUseCase {
     }
 
     @Override
-    public Order execute(
-            Long customerId,
-            List<OrderItem> items
-    ) {
+    public Order execute(Long customerId, List<OrderItem> items) {
 
         Order order = new Order(null, customerId);
 
